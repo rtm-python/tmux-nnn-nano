@@ -1,8 +1,8 @@
 #!/bin/bash
 
-yum install -y tmux \
+yum install -y \
+	tmux \
 	nnn \
-	nano \
-	htop \
-	nmap \
-	wireshark
+	nano
+
+cp nanorc /etc/nanorc

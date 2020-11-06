@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+session="IDE-LIKE"
+pane="${session}:0.1"
+
+tmux send-keys -t "$pane" C-c C-x n Enter
+tmux send-keys -t "$pane" C-z "nano -c \"$*\"" Enter
+tmux select-pane -t "$pane"
