@@ -285,3 +285,4 @@ bind M-z undo main
 bind M-f whereis main
 bind M-h replace main
 bind ^SPACE complete main
+bind M-/ comment main

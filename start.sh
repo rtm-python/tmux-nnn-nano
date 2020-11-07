@@ -1,9 +1,14 @@
 #!/bin/bash
 
-export VISUAL=$(pwd)/nnn-edit
-export EDITOR=$(pwd)/nnn-edit
-
 session="IDE-LIKE"
+
+workdir=$(dirname "$0")
+cd "$workdir"
+cp nanorc ~/.nanorc
+
+export EDITOR=$(pwd)/nnn-edit
+export VISUAL=$(pwd)/nnn-edit
+
 
 tmux \
 	new-session -s "$session" \; \
