@@ -2,6 +2,7 @@
 
 session="IDE-LIKE"
 
+initdir=$(pwd)
 workdir=$(dirname "$0")
 cd "$workdir"
 cp nanorc ~/.nanorc
@@ -12,11 +13,11 @@ export VISUAL=$(pwd)/nnn-edit
 
 tmux \
 	new-session -s "$session" \; \
-	send-keys 'nnn ~ -f -d -o -e' Enter \; \
-	split-window -v -c '~' -p 25  \; \
+	send-keys 'nnn '"$initdir"' -f -d -o -e' Enter \; \
+	split-window -c "$initdir" -v -p 25  \; \
 	select-pane -t 0 \; \
-	split-window -h -c '~' -p 75 \; \
-	split-window -h -c '~' -p 50 \; \
+	split-window -c "$initdir" -h -p 75 \; \
+	split-window -c "$initdir" -h -p 50 \; \
 	set-option -g mouse on \; \
 	set-option -g prefix C-a \; unbind-key C-b \; \
 	bind Escape copy-mode \; unbind [ \; \
