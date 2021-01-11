@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=TNN
+Comment=tmux-nnn-nano
+Exec=bash -c "/home/rt/Data/projects/python/tmux-nnn-nano/start.sh"
+Icon=terminal
+Terminal=true
+Type=Application
+Catgories=Applocation;
